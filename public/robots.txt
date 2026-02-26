@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://acrobatic-mediocre-newt-6nphke.teleporthq.app/sitemap.xml
