@@ -21,6 +21,11 @@ Investigación (46 fuentes), datos (17 operadores, 7 programas, 11 mercados), we
 - Red del entorno de construcción: no se pudieron abrir páginas web (solo resultados de búsqueda) ni comprobar enlaces externos.
 
 ## Sesión siguiente (pedido del propietario)
+- **Traslado a repositorio independiente** (el propietario no quiere ningún vínculo con el otro repositorio):
+  1. El propietario crea el repo privado `juego-verificado` y da acceso a la app de Claude.
+  2. `git subtree split --prefix=afiliacion-casinos`, clonar, reiniciar historial con un único commit en `main`.
+  3. Quitar referencias al repositorio anterior (README, docs/05, docs/11, cron, build_pdf tree, logs de pruebas), `make setup && make test`, `make pdf`, comprobar con `git grep` que no quedan menciones.
+  4. Push a `juego-verificado` y, solo con confirmación expresa, borrar la rama del repositorio anterior.
 - Responder en detalle: ¿es buena idea de negocio y vale la pena? (veredicto preliminar dado: experimento de bajo coste con criterios de abandono; ver conversación).
 - Vista previa privada publicada: https://claude.ai/artifact/Cj4DKDweX7dppA5rsDJhuC
 - Revisar `docs/anexo-estructura-georgia-estonia.md` (cuenta en Georgia + OÜ en Estonia). Conclusión preliminar: no constituir aún; validar con asesor en RD.
