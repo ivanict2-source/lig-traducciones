@@ -20,6 +20,10 @@ Investigación (46 fuentes), datos (17 operadores, 7 programas, 11 mercados), we
 - Dominio, cuenta de Cloudflare, Search Console, SMTP para n8n, `ANTHROPIC_API_KEY` (opcional).
 - Red del entorno de construcción: no se pudieron abrir páginas web (solo resultados de búsqueda) ni comprobar enlaces externos.
 
+## Sesión siguiente (pedido del propietario)
+- Revisar `docs/anexo-estructura-georgia-estonia.md` (cuenta en Georgia + OÜ en Estonia). Conclusión preliminar: no constituir aún; validar con asesor en RD.
+- Repetir `git push` cuando GitHub tenga acceso (2-3 commits locales pendientes).
+
 ## Próximos pasos sugeridos
 1. Propietario: leer `reports/informe-proyecto.pdf` y decidir (capítulo 30.2).
 2. Ejecutar `python scripts/check_site.py website/dist-preview --external` con Internet.
