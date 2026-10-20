@@ -1,0 +1,170 @@
+.venv/bin/python scripts/validate_content.py
+ADVERTENCIA: content/guias/senales-casino-no-autorizado.md: solo 295 palabras (mínimo orientativo 300)
+ADVERTENCIA: DESPLIEGUE A PRODUCCIÓN BLOQUEADO: páginas legales sin aprobar/publicar: /aviso-de-afiliacion/, /privacidad/, /cookies/, /condiciones-de-uso/, /juego-responsable/, /metodologia/, /contacto/
+ADVERTENCIA: MERCADO PE NO PUBLICABLE en producción: aviso legal obligatorio incompleto (config/site.yaml)
+Resultado: 0 errores, 3 advertencias
+cd website && npm run build && npm run build:preview
+
+> juego-verificado-web@0.1.0 prebuild
+> node scripts/gen-go-links.mjs
+
+go-links: 0 enlaces activos
+
+> juego-verificado-web@0.1.0 build
+> astro build
+
+01:34:17 [content] Syncing content
+01:34:17 [content] Synced content
+01:34:17 [types] Generated 1.20s
+01:34:17 [build] output: "static"
+01:34:17 [build] mode: "static"
+01:34:17 [build] directory: /home/user/lig-traducciones/afiliacion-casinos/website/dist/
+01:34:17 [build] Collecting build info...
+01:34:17 [build] ✓ Completed in 1.28s.
+01:34:17 [build] Building static entrypoints...
+01:34:18 [vite] ✓ built in 726ms
+01:34:18 [vite] ✓ built in 52ms
+01:34:18 [build] Rearranging server assets...
+
+ generating static routes 
+01:34:18   ├─ /404.html (+14ms) 
+01:34:18   ├─ /fuentes/index.html (+12ms) 
+01:34:18   ├─ /mercados/index.html (+8ms) 
+01:34:18   ├─ /robots.txt (+8ms) 
+01:34:18   ├─ /co/operadores/index.html (+4ms) 
+01:34:18   ├─ /co/index.html (+3ms) 
+01:34:18   ├─ /index.html (+11ms) 
+01:34:18 ✓ Completed in 101ms.
+
+01:34:18 [build] ✓ Completed in 959ms.
+01:34:18 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+01:34:18 [build] 6 page(s) built in 2.27s
+01:34:18 [build] Complete!
+
+> juego-verificado-web@0.1.0 build:preview
+> node scripts/gen-go-links.mjs && PUBLIC_BUILD_MODE=preview astro build --outDir dist-preview
+
+go-links: 0 enlaces activos
+01:34:20 [content] Syncing content
+01:34:20 [content] Synced content
+01:34:20 [types] Generated 1.08s
+01:34:20 [build] output: "static"
+01:34:20 [build] mode: "static"
+01:34:20 [build] directory: /home/user/lig-traducciones/afiliacion-casinos/website/dist-preview/
+01:34:20 [build] Collecting build info...
+01:34:20 [build] ✓ Completed in 1.17s.
+01:34:20 [build] Building static entrypoints...
+01:34:21 [vite] ✓ built in 728ms
+01:34:21 [vite] ✓ built in 39ms
+01:34:21 [build] Rearranging server assets...
+
+ generating static routes 
+01:34:21   ├─ /404.html (+12ms) 
+01:34:21   ├─ /fuentes/index.html (+11ms) 
+01:34:21   ├─ /mercados/index.html (+3ms) 
+01:34:21   ├─ /robots.txt (+2ms) 
+01:34:21   ├─ /co/operadores/betano-co/index.html (+5ms) 
+01:34:21   ├─ /co/operadores/betplay-co/index.html (+7ms) 
+01:34:21   ├─ /co/operadores/betsson-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/bingocasino-co/index.html (+3ms) 
+01:34:21   ├─ /co/operadores/bwin-co/index.html (+5ms) 
+01:34:21   ├─ /co/operadores/codere-co/index.html (+4ms) 
+01:34:21   ├─ /co/operadores/luckia-co/index.html (+4ms) 
+01:34:21   ├─ /co/operadores/mryoker-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/rivalo-co/index.html (+15ms) 
+01:34:21   ├─ /co/operadores/rushbet-co/index.html (+1ms) 
+01:34:21   ├─ /co/operadores/sportium-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/stake-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/wplay-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/yajuego-co/index.html (+2ms) 
+01:34:21   ├─ /co/operadores/zamba-co/index.html (+2ms) 
+01:34:21   ├─ /pe/operadores/rushbet-pe/index.html (+3ms) 
+01:34:21   ├─ /pe/operadores/stake-pe/index.html (+1ms) 
+01:34:21   ├─ /co/operadores/index.html (+2ms) 
+01:34:21   ├─ /pe/operadores/index.html (+1ms) 
+01:34:21   ├─ /co/index.html (+3ms) 
+01:34:21   ├─ /pe/index.html (+2ms) 
+01:34:21   ├─ /index.html (+2ms) 
+01:34:21   ├─ /co/guias/publicidad-juego-online-colombia-2026/index.html (+3ms) 
+01:34:21   ├─ /co/guias/como-verificar-licencia-coljuegos/index.html (+2ms) 
+01:34:21   ├─ /pe/guias/ley-31557-casinos-online-peru/index.html (+2ms) 
+01:34:21   ├─ /pe/guias/como-verificar-autorizacion-mincetur/index.html (+2ms) 
+01:34:21   ├─ /guias/senales-casino-no-autorizado/index.html (+2ms) 
+01:34:21   ├─ /aviso-de-afiliacion/index.html (+1ms) 
+01:34:21   ├─ /condiciones-de-uso/index.html (+1ms) 
+01:34:21   ├─ /contacto/index.html (+1ms) 
+01:34:21   ├─ /cookies/index.html (+2ms) 
+01:34:21   ├─ /correcciones/index.html (+2ms) 
+01:34:21   ├─ /juego-responsable/index.html (+1ms) 
+01:34:21   ├─ /metodologia/index.html (+1ms) 
+01:34:21   ├─ /privacidad/index.html (+1ms) 
+01:34:21   ├─ /sobre-nosotros/index.html (+2ms) 
+01:34:21 ✓ Completed in 173ms.
+
+01:34:21 [build] ✓ Completed in 1.00s.
+01:34:21 [build] 39 page(s) built in 2.20s
+01:34:21 [build] Complete!
+mkdir -p reports/pruebas
+.venv/bin/python scripts/check_site.py website/dist-preview --json reports/pruebas/check_site_preview.json
+Páginas: 39 · enlaces externos únicos: 47 · errores: 0 · advertencias: 0
+.venv/bin/python scripts/check_site.py website/dist --production --json reports/pruebas/check_site_production.json
+ERROR: enlace interno roto /aviso-de-afiliacion/ (en 6 páginas)
+ERROR: enlace interno roto /condiciones-de-uso/ (en 6 páginas)
+ERROR: enlace interno roto /contacto/ (en 6 páginas)
+ERROR: enlace interno roto /cookies/ (en 6 páginas)
+ERROR: enlace interno roto /correcciones/ (en 6 páginas)
+ERROR: enlace interno roto /juego-responsable/ (en 6 páginas)
+ERROR: enlace interno roto /metodologia/ (en 6 páginas)
+ERROR: enlace interno roto /privacidad/ (en 6 páginas)
+ERROR: enlace interno roto /sobre-nosotros/ (en 6 páginas)
+Páginas: 6 · enlaces externos únicos: 45 · errores: 73 · advertencias: 0
+make: [Makefile:24: check] Error 1 (ignored)
+.venv/bin/python -m pytest -q tests
+.............................                                            [100%]
+29 passed in 0.93s
+cd website && npm test
+
+> juego-verificado-web@0.1.0 test
+> node --test tests/go.test.mjs
+
+TAP version 13
+# Subtest: redirige desde el país autorizado y añade sub-ID saneado
+ok 1 - redirige desde el país autorizado y añade sub-ID saneado
+  ---
+  duration_ms: 0.918018
+  type: 'test'
+  ...
+# Subtest: bloquea países fuera del mercado autorizado
+ok 2 - bloquea países fuera del mercado autorizado
+  ---
+  duration_ms: 0.167677
+  type: 'test'
+  ...
+# Subtest: enlace desconocido devuelve 404 sin redirección
+ok 3 - enlace desconocido devuelve 404 sin redirección
+  ---
+  duration_ms: 0.095232
+  type: 'test'
+  ...
+# Subtest: sanitizeSubid
+ok 4 - sanitizeSubid
+  ---
+  duration_ms: 0.108184
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 84.959137
+cd website && npm run test:a11y
+
+> juego-verificado-web@0.1.0 test:a11y
+> node tests/a11y.mjs dist-preview
+
+Sin incidencias de accesibilidad.
+Páginas auditadas: 38 x 2 esquemas · incidencias graves: 0

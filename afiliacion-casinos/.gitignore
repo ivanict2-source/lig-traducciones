@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.cache/
+backups/
+reports/logs/
+data/metrics/
+website/node_modules/
+website/dist/
+website/dist-preview/
+website/.astro/
+website/edge/go-links.generated.js

@@ -1,0 +1,25 @@
+# n8n community autoalojado, accesible SOLO desde el propio equipo (127.0.0.1).
+# No se expone a Internet. Fijar una versión concreta y revisar sus notas antes de actualizar.
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:2.42.2   # versión fijada (publicada hace >14 días); verificar notas antes de actualizar
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=America/Santo_Domingo
+      - TZ=America/Santo_Domingo
+      - N8N_SECURE_COOKIE=false            # solo porque se accede por http://localhost
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_PERSONALIZATION_ENABLED=false
+      # n8n 2.x desactiva Execute Command y Local File Trigger por defecto.
+      # Se habilita SOLO Execute Command, que los flujos necesitan:
+      - NODES_EXCLUDE=["n8n-nodes-base.localFileTrigger"]
+      - PROJECT_DIR=/proyecto
+    volumes:
+      - n8n_data:/home/node/.n8n
+      # Montaje del proyecto. La imagen de n8n no trae Python ni make: ver docs/06-automatizacion.md
+      # (opción recomendada: cron en el host; opción n8n: imagen propia con python3 y make).
+      - ../../:/proyecto
+volumes:
+  n8n_data:

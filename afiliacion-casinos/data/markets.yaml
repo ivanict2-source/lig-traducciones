@@ -1,0 +1,180 @@
+# Matriz de mercados (2026-10-20).
+# Escalas: competencia / oportunidad_seo / dificultad / riesgo_legal = baja | media | alta
+# Las valoraciones de competencia y oportunidad SEO son CUALITATIVAS: no se
+# dispuso de herramientas de volumen de búsqueda (el conector de Ahrefs/Similarweb
+# no conectó en la sesión). Deben recalibrarse con Search Console y Keyword
+# Planner antes de invertir. Prioridad: 1 = MVP, 2 = siguiente, 3 = condicionada, X = excluido.
+
+markets:
+  - code: CO
+    country: Colombia
+    language: es-CO
+    regulatory_status: "Regulado desde 2016. Operadores online con contrato de concesión de Coljuegos. Régimen publicitario (Res. 20231000019054 de 2023) parcialmente suspendido por el Consejo de Estado en junio de 2026."
+    official_sources: [coljuegos-operadores-online, coljuegos-15-operadores, coljuegos-como-ser-operador]
+    regulator_registry: https://www.coljuegos.gov.co/publicaciones/301841/juegosonline/
+    competition: alta
+    seo_opportunity: media
+    entry_difficulty: media
+    authorized_operators: "15 según Coljuegos (mayo de 2026)"
+    monetization: "Probable: varios operadores con programas de afiliados conocidos (Betsson, Codere, RushBet, Betano, bwin). Condiciones por confirmar."
+    legal_risk: media
+    affiliate_obligations: "La normativa publicitaria de 2023 alcanza a terceros que publicitan por cuenta del operador; uso de la leyenda 'Autorizado por COLJUEGOS'; prohibido sugerir gratuidad o prometer ganancias."
+    priority: 1
+    notes: "Registro oficial con número de contrato: permite un diferencial de verificación transparente."
+
+  - code: PE
+    country: Perú
+    language: es-PE
+    regulatory_status: "Regulado por la Ley 31557 y el DS 005-2023-MINCETUR desde el 10-02-2024. Bloqueo activo de plataformas no autorizadas en 2026."
+    official_sources: [mincetur-faq-ley-31557, mincetur-inicio-registro, ds-005-2023-mincetur, elperuano-bloqueo-2026]
+    regulator_registry: https://apuestasdeportivas.mincetur.gob.pe/
+    competition: media
+    seo_opportunity: media-alta
+    entry_difficulty: media
+    authorized_operators: "No verificado (cifras contradictorias en prensa: >90 licencias vs 54 casinos)."
+    monetization: "Probable (RushBet, Stake y otros autorizados según prensa). Programas por confirmar."
+    legal_risk: media
+    affiliate_obligations: "Publicidad solo de plataformas autorizadas por MINCETUR; advertencia obligatoria sobre ludopatía; sin dirigirse a menores."
+    priority: 1
+    notes: "Mercado regulado más reciente: menos contenido consolidado sobre 'cómo verificar' y cambios normativos."
+
+  - code: MX
+    country: México
+    language: es-MX
+    regulatory_status: "Permisos de SEGOB vinculados a permisionarios; nueva ley en preparación (sep. 2026); IEPS al 50 % desde 2026 según prensa."
+    official_sources: [mx-reforma-2026, sigma-mx-reforma]
+    regulator_registry: null
+    competition: alta
+    seo_opportunity: media
+    entry_difficulty: alta
+    authorized_operators: "Sin registro público consolidado verificado."
+    monetization: "Alta potencialmente, pero la verificación de permisos es más difícil."
+    legal_risk: media-alta
+    affiliate_obligations: "Por determinar con la nueva ley."
+    priority: 2
+    notes: "Activar solo cuando exista registro público verificable o asesoría local."
+
+  - code: ES
+    country: España
+    language: es-ES
+    regulatory_status: "Regulado (Ley 13/2011, DGOJ). RD 958/2020 alcanza expresamente a afiliados; el TS anuló varios artículos en 2024."
+    official_sources: [boe-rd-958-2020, dgoj-faq-afiliados, ts-rd958-2024]
+    regulator_registry: https://www.ordenacionjuego.es/operadores-juego/operadores-licencia
+    competition: alta
+    seo_opportunity: baja
+    entry_difficulty: alta
+    authorized_operators: "Lista oficial DGOJ (no descargada)."
+    monetization: "Madura y muy competida."
+    legal_risk: media
+    affiliate_obligations: "Comprobar título habilitante del anunciante; reglas de contenido y de bonos del RD 958/2020 vigentes tras la sentencia."
+    priority: 3
+    notes: "Mercado saturado por portales consolidados; no compensa como primer mercado."
+
+  - code: AR
+    country: Argentina
+    language: es-AR
+    regulatory_status: "Mosaico provincial (~20 de 24 jurisdicciones regulan); proyecto nacional en el Senado (mayo 2026)."
+    official_sources: [canal26-argentina]
+    regulator_registry: null
+    competition: media
+    seo_opportunity: media
+    entry_difficulty: alta
+    authorized_operators: "Por provincia."
+    monetization: "Fragmentada por provincia."
+    legal_risk: alta
+    affiliate_obligations: "Varía por provincia; propuestas de restricción publicitaria."
+    priority: 3
+    notes: "Requiere segmentación provincial y asesoría local."
+
+  - code: BR
+    country: Brasil
+    language: pt-BR
+    regulatory_status: "Régimen de licencias federal (Lei 14.790/2023); Portaria SPA/MF 1.231/2024 regula publicidad y afiliados."
+    official_sources: [spa-portaria-1231]
+    regulator_registry: null
+    competition: alta
+    seo_opportunity: media
+    entry_difficulty: alta
+    authorized_operators: "Lista oficial SPA (no consultada)."
+    monetization: "Mercado grande, pero exige contrato escrito en portugués y responsabilidad compartida."
+    legal_risk: alta
+    affiliate_obligations: "Art. 22 Portaria 1.231: afiliados como parte del marketing del operador; contratos en portugués; sanciones de la Ley 14.790."
+    priority: 3
+    notes: "Requiere idioma portugués y revisión legal especializada."
+
+  - code: CA-ON
+    country: Canadá (Ontario)
+    language: en-CA
+    regulatory_status: "Regulado (AGCO / iGaming Ontario)."
+    official_sources: [agco-advertising]
+    regulator_registry: null
+    competition: alta
+    seo_opportunity: baja
+    entry_difficulty: alta
+    authorized_operators: "Registro AGCO."
+    monetization: "Limitada: prohibida la publicidad pública de bonos e incentivos, también por afiliados."
+    legal_risk: media
+    affiliate_obligations: "No promocionar sitios no registrados; sin incentivos en publicidad pública; posible registro del afiliado ante la AGCO (confirmar)."
+    priority: 3
+
+  - code: UK
+    country: Reino Unido
+    language: en-GB
+    regulatory_status: "Regulado (Gambling Act 2005, UKGC). Afiliados obligados contractualmente por la LCCP y sujetos a CAP/BCAP."
+    official_sources: [harrishagan-affiliates-uk]
+    regulator_registry: null
+    competition: alta
+    seo_opportunity: baja
+    entry_difficulty: alta
+    authorized_operators: "Registro público UKGC."
+    monetization: "Madura y saturada."
+    legal_risk: media
+    affiliate_obligations: "Cumplimiento CAP/BCAP y condiciones contractuales del operador."
+    priority: 3
+
+  - code: US
+    country: Estados Unidos (estados regulados)
+    language: en-US
+    regulatory_status: "Estado por estado; afiliados sujetos a registro de proveedor o licencia auxiliar según modelo de comisión (p. ej. Nueva Jersey)."
+    official_sources: [ifrah-nj-affiliates]
+    regulator_registry: null
+    competition: alta
+    seo_opportunity: baja
+    entry_difficulty: alta
+    authorized_operators: "Por estado."
+    monetization: "Alta, pero con coste de licencias por estado y competencia muy fuerte."
+    legal_risk: alta
+    affiliate_obligations: "Licencia/registro por estado."
+    priority: 3
+
+  - code: CL
+    country: Chile
+    language: es-CL
+    regulatory_status: "No regulado para juego online: proyecto de ley (Boletín 14.838-03) en tramitación; la SCJ considera no autorizada la explotación."
+    official_sources: [chile-proyecto-2026]
+    regulator_registry: null
+    competition: media
+    seo_opportunity: n/a
+    entry_difficulty: n/a
+    authorized_operators: "Ninguno online bajo licencia chilena."
+    monetization: "No procede."
+    legal_risk: alta
+    affiliate_obligations: "No promocionar hasta que exista régimen de licencias."
+    priority: X
+    notes: "Excluido. Bloquear tráfico de afiliación desde CL en /go/."
+
+  - code: DO
+    country: República Dominicana
+    language: es-DO
+    regulatory_status: "Nueva Ley 86-26 (oct. 2026) crea la Dirección General de Juegos de Azar e incluye juego por internet; reglamentación pendiente."
+    official_sources: [rd-ley-86-26]
+    regulator_registry: null
+    competition: baja
+    seo_opportunity: n/a
+    entry_difficulty: n/a
+    authorized_operators: "Por determinar con la nueva ley."
+    monetization: "No procede hasta conocer el reglamento."
+    legal_risk: alta
+    affiliate_obligations: "Desconocidas; consultar a abogado dominicano antes de dirigir contenido al mercado local."
+    priority: X
+    notes: "Mercado de residencia del propietario: no se dirige tráfico local hasta que la DGJA publique reglas."

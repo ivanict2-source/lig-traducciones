@@ -1,0 +1,9 @@
+# Programación recomendada (sin n8n): `crontab -e` y pegar, ajustando la ruta.
+# Linux/macOS. En Windows usar el Programador de tareas con los mismos comandos (WSL recomendado).
+PROJECT=/ruta/a/afiliacion-casinos
+# Copia de seguridad diaria
+30 2 * * *   cd $PROJECT && make backup      >> reports/logs/backup.log 2>&1
+# Mantenimiento semanal (lunes 07:00)
+0 7 * * 1    cd $PROJECT && make maintenance >> reports/logs/maintenance.log 2>&1
+# Informe mensual (día 1, 08:00)
+0 8 1 * *    cd $PROJECT && make report      >> reports/logs/report.log 2>&1

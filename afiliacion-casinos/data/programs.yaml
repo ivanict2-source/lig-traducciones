@@ -1,0 +1,97 @@
+# Programas de afiliación candidatos.
+#
+# Ningún dato contractual está verificado en una fuente primaria: los términos
+# oficiales no pudieron descargarse desde el entorno (bloqueo de red) y las cifras
+# proceden de agregadores de terceros (fiabilidad baja). Antes de solicitar el
+# alta hay que leer los T&C oficiales y preguntar por escrito al gestor de
+# afiliados los puntos de `confirm_with_program`.
+#
+# evidence: verificado | comunicado-comercial | agregador | desconocido
+
+common_questions: &q
+  - "¿Aceptan afiliados (persona física o empresa) residentes en República Dominicana? ¿Qué KYC exigen?"
+  - "¿Qué mercados/marcas están disponibles para el afiliado (Colombia, Perú, México)?"
+  - "Tipo y tasa de comisión (RevShare / CPA / híbrido), umbral de calificación del CPA y periodo de retención."
+  - "¿Existe arrastre de saldo negativo (negative carryover)? ¿Cuota administrativa?"
+  - "Pago mínimo, frecuencia, métodos disponibles hacia RD (transferencia, Skrill, Neteller...) y moneda."
+  - "Duración de la cookie / ventana de atribución y si admiten sub-ID por página."
+  - "Restricciones de marca (bidding, uso del logotipo), material creativo aprobado y requisitos regulatorios por país (p. ej. leyenda 'Autorizado por COLJUEGOS')."
+  - "Cláusulas de terminación, inactividad y retención de comisiones."
+
+programs:
+  - id: codere-partners
+    name: Codere Partners
+    brands_markets: "Codere (España, LatAm según el propio programa)"
+    commission: { models: [revshare, cpa, hibrido], rates: "a petición", evidence: agregador }
+    payment: { min: "200 EUR", frequency: mensual, methods: "transferencia, Neteller, Skrill, PayPal", evidence: agregador }
+    negative_carryover: { value: "no", evidence: agregador }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-codere]
+    confirm_with_program: *q
+
+  - id: betsson-group-affiliates
+    name: Betsson Group Affiliates
+    brands_markets: "Betsson y otras marcas del grupo (incluye Colombia según Coljuegos)"
+    commission: { models: [revshare, cpa, hibrido], rates: "25-50 % RevShare", evidence: agregador }
+    payment: { min: "50 EUR", frequency: mensual, methods: desconocido, evidence: agregador }
+    negative_carryover: { value: "contradictorio", evidence: agregador }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-betsson]
+    confirm_with_program: *q
+
+  - id: rush-affiliates
+    name: Rush Affiliates (Rush Street Interactive)
+    brands_markets: "RushBet Colombia / México (Perú no confirmado)"
+    commission: { models: [revshare], rates: "25-35 % RevShare", evidence: agregador }
+    payment: { min: desconocido, frequency: desconocido, methods: desconocido, evidence: desconocido }
+    negative_carryover: { value: desconocido, evidence: desconocido }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-rush, rsi-rushbet-peru]
+    confirm_with_program: *q
+
+  - id: betano-affiliates
+    name: Betano Affiliates (Kaizen Gaming)
+    brands_markets: "Betano LatAm (Colombia, México, Argentina, Perú por confirmar)"
+    commission: { models: [revshare], rates: "20 % RevShare (ficha LatAm); otra ficha cita 20-30 % y CPA", evidence: agregador }
+    payment: { min: desconocido, frequency: mensual, methods: desconocido, evidence: agregador }
+    negative_carryover: { value: desconocido, evidence: desconocido }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-betano-latam]
+    confirm_with_program: *q
+
+  - id: entain-partners
+    name: Entain Partners
+    brands_markets: "bwin y otras marcas de Entain"
+    commission: { models: [revshare], rates: "hasta 35 % RevShare (sin mercado especificado)", evidence: agregador }
+    payment: { min: desconocido, frequency: desconocido, methods: desconocido, evidence: desconocido }
+    negative_carryover: { value: desconocido, evidence: desconocido }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [affpaying-entain]
+    confirm_with_program: *q
+
+  - id: red-luckia
+    name: Red Luckia
+    brands_markets: "Luckia (España, Colombia)"
+    commission: { models: [revshare], rates: "25-45 % RevShare", evidence: agregador }
+    payment: { min: desconocido, frequency: mensual, methods: desconocido, evidence: agregador }
+    negative_carryover: { value: desconocido, evidence: desconocido }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-luckia]
+    confirm_with_program: *q
+
+  - id: bet365-partners
+    name: bet365 Partners
+    brands_markets: "bet365 (mercados aceptados contradictorios entre directorios; Colombia no confirmado)"
+    commission: { models: [revshare], rates: "30 % RevShare plano (directorios)", evidence: agregador }
+    payment: { min: "100-250 EUR según la fuente", frequency: mensual, methods: desconocido, evidence: agregador }
+    negative_carryover: { value: desconocido, evidence: desconocido }
+    dominican_affiliates: { value: desconocido, evidence: desconocido }
+    apply_url: null
+    source_ids: [statsdrone-bet365]
+    confirm_with_program: *q

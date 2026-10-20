@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/validate_content.py*)",
+      "Bash(.venv/bin/python scripts/validate_content.py*)",
+      "Bash(.venv/bin/python scripts/check_site.py*)",
+      "Bash(.venv/bin/python scripts/editorial_status.py*)",
+      "Bash(.venv/bin/python scripts/pipeline.py --dry-run*)",
+      "Bash(make validate)",
+      "Bash(make build)",
+      "Bash(make check)",
+      "Bash(make test)",
+      "Bash(make report)",
+      "Bash(make pdf)"
+    ],
+    "deny": [
+      "Bash(*scripts/approve.py*)",
+      "Bash(make deploy*)",
+      "Bash(*wrangler*deploy*)",
+      "Bash(git push*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}

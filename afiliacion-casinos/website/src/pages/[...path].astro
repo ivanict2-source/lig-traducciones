@@ -1,0 +1,30 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SourceList from '../components/SourceList.astro';
+import { publishedEntries, alternatesFor, type Entry } from '../lib/content';
+
+export async function getStaticPaths() {
+  const entries = await publishedEntries();
+  return entries.map((entry) => ({
+    params: { path: entry.data.permalink.replace(/^\/|\/$/g, '') },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props as { entry: Entry };
+const { Content } = await render(entry);
+const d = entry.data;
+const alternates = await alternatesFor(entry);
+---
+<Base title={d.title} description={d.description} lang={d.lang} market={d.market} alternates={alternates} draftStatus={d.status}>
+  <article>
+    <h1>{d.title}</h1>
+    <p class="meta">
+      Última verificación: {d.last_verified.toISOString().slice(0, 10)} · Actualizado: {d.updated.toISOString().slice(0, 10)}
+      {d.approved_by && <> · Revisado por: {d.approved_by}</>}
+    </p>
+    <Content />
+    <SourceList ids={d.sources} />
+    <p class="meta">¿Ves un error? Escríbenos a través de la página de <a href="/correcciones/">correcciones</a>.</p>
+  </article>
+</Base>

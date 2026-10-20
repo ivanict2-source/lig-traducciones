@@ -1,0 +1,6 @@
+node_modules/
+dist/
+dist-preview/
+.astro/
+src/generated/
+edge/go-links.generated.js

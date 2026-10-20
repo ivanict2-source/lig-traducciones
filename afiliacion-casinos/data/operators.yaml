@@ -1,0 +1,189 @@
+# Operadores por mercado.
+#
+# REGLAS (aplicadas por scripts/validate_content.py y por la web):
+# - Solo se muestran en producción operadores con verification.status == "verificado-humano".
+# - "fuente-oficial-indirecta": aparece en una página del regulador, pero la
+#   lectura se hizo a través de resultados de búsqueda (no se pudo abrir la página).
+# - "prensa": solo hay respaldo de prensa o del propio operador.
+# - official_url: null mientras no se confirme el dominio en la fuente oficial.
+#   NUNCA se rellena por suposición.
+# - affiliate.url: null hasta que exista un acuerdo firmado con el programa.
+#
+# Fecha de la última revisión automática: 2026-10-20
+
+colombia_regulator_url: &co_reg https://www.coljuegos.gov.co/publicaciones/301841/juegosonline/
+
+operators:
+  - id: wplay-co
+    name: Wplay
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2182"
+    legal_entity: "Aquila Global Group"
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: betplay-co
+    name: BetPlay
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 1876"
+    legal_entity: "Corredor Empresarial"
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: betsson-co
+    name: Betsson
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 1895"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: betsson-group-affiliates, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: codere-co
+    name: Codere
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2218"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: codere-partners, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: rushbet-co
+    name: RushBet
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 1972"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: rush-affiliates, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: bwin-co
+    name: Bwin
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2229"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: entain-partners, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: stake-co
+    name: Stake
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2226"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: betano-co
+    name: Betano
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2104"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: betano-affiliates, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: yajuego-co
+    name: YaJuego
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión 2240"
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-operadores-online, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: mryoker-co
+    name: MrYoker
+    market: CO
+    regulator: Coljuegos
+    license_ref: "Contrato de concesión C2261 de 2026 (vigencia hasta 2031)"
+    legal_entity: "Global Vitxo S.A.S."
+    official_url: https://www.mryoker.co
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-mryoker, coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  # Operadores que figuran en el boletín de mayo de 2026 pero cuyo número de
+  # contrato no apareció en los fragmentos consultados.
+  - id: luckia-co
+    name: Luckia
+    market: CO
+    regulator: Coljuegos
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: red-luckia, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: sportium-co
+    name: Sportium
+    market: CO
+    regulator: Coljuegos
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: rivalo-co
+    name: Rivalo
+    market: CO
+    regulator: Coljuegos
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: zamba-co
+    name: Zamba
+    market: CO
+    regulator: Coljuegos
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: bingocasino-co
+    name: Bingo Casino
+    market: CO
+    regulator: Coljuegos
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: fuente-oficial-indirecta, source_ids: [coljuegos-15-operadores], checked: 2026-10-20, checked_by: agente-investigador }
+    notes: "Aparece en el boletín de mayo de 2026, pero no en la tabla de contratos consultada. Confirmar."
+
+  # Perú: no se pudo acceder al registro de la DGJCMT. Solo hay respaldo de prensa.
+  - id: rushbet-pe
+    name: RushBet
+    market: PE
+    regulator: MINCETUR
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: rush-affiliates, url: null, status: no-solicitado }
+    verification: { status: prensa, source_ids: [rsi-rushbet-peru], checked: 2026-10-20, checked_by: agente-investigador }
+
+  - id: stake-pe
+    name: Stake
+    market: PE
+    regulator: MINCETUR
+    license_ref: null
+    legal_entity: null
+    official_url: null
+    affiliate: { program_id: null, url: null, status: no-solicitado }
+    verification: { status: prensa, source_ids: [yogonet-stake-peru], checked: 2026-10-20, checked_by: agente-investigador }

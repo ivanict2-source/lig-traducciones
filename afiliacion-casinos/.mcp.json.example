@@ -1,0 +1,10 @@
+{
+  "_comentario": "Plantilla SIN PROBAR. No se ha instalado ningún servidor MCP en este proyecto. Antes de copiarla a .mcp.json: verificar la URL oficial del servidor en la documentación del proveedor, su procedencia, permisos y licencia (docs/05-agentes-skills-mcp.md). Los tokens se leen de variables de entorno; nunca se escriben aquí.",
+  "mcpServers": {
+    "ejemplo-servidor-http": {
+      "type": "http",
+      "url": "https://URL-OFICIAL-VERIFICADA/mcp",
+      "headers": { "Authorization": "Bearer ${TOKEN_DEL_SERVICIO}" }
+    }
+  }
+}

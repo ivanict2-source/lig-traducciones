@@ -1,0 +1,536 @@
+# Registro de fuentes (bibliografía) del proyecto.
+#
+# Todas las fuentes se consultaron el 2026-10-20 mediante la herramienta de
+# búsqueda web disponible en la sesión. IMPORTANTE: el entorno bloqueaba la
+# descarga directa de páginas (WebFetch/curl devolvían error DNS/403), por lo que
+# las afirmaciones proceden de los fragmentos y resúmenes que devolvía el
+# buscador, no de una lectura completa del documento. Por eso cada fuente lleva
+# `access: snippet` y toda afirmación sensible debe confirmarse abriendo la URL
+# antes de publicar (ver docs/09-pendientes-y-bloqueos.md).
+#
+# type: official | law-firm | press | trade-press | vendor | aggregator | community
+# reliability: alta | media | baja
+
+- id: boe-rd-958-2020
+  title: "Real Decreto 958/2020, de comunicaciones comerciales de las actividades de juego (BOE-A-2020-13495)"
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2020-13495
+  type: official
+  reliability: alta
+  market: ES
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El RD 958/2020 alcanza a quienes difunden comunicaciones comerciales de juego, incluidos afiliados, páginas web y redes sociales."
+    - "La publicidad en servicios de comunicación audiovisual se limita a la franja 01:00-05:00, con excepciones."
+
+- id: dgoj-faq-afiliados
+  title: "DGOJ - Preguntas frecuentes / Publicidad en el juego"
+  url: https://www.ordenacionjuego.es/en/node/2151
+  type: official
+  reliability: alta
+  market: ES
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Los operadores responden por infracciones publicitarias de afiliados cuando la publicidad se hace por su cuenta o encargo."
+    - "Los afiliados deben comprobar que quien encarga la publicidad tiene título habilitante y abstenerse si no lo tiene."
+
+- id: ts-rd958-2024
+  title: "El Tribunal Supremo anula varios artículos del Real Decreto 958/2020 (Poder Judicial)"
+  url: https://www.poderjudicial.es/cgpj/es/Poder-Judicial/Tribunal-Supremo/Noticias-Judiciales/El-Tribunal-Supremo-anula-varios-articulos-del-Real-Decreto-958-2020-de-comunicaciones-comerciales-de-las-actividades-de-juego
+  type: official
+  reliability: alta
+  market: ES
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Sentencia de abril de 2024 (Sala Tercera) que estima parcialmente el recurso de Jdigital y anula, entre otros, los apartados 1 y 3 del art. 13, el art. 15, el art. 23.1, el 25.3 y el 26.2 y 26.3."
+    - "Las fuentes discrepan sobre la fecha exacta (2 o 4 de abril de 2024) y la fecha de publicación en BOE (25 o 31 de mayo de 2024)."
+
+- id: coljuegos-operadores-online
+  title: "Operadores de Juegos Online Autorizados por Coljuegos"
+  url: https://www.coljuegos.gov.co/publicaciones/301841/juegosonline/
+  type: official
+  reliability: alta
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Tabla oficial que asocia sitios con número de contrato de concesión (p. ej. Wplay contrato 2182 - Aquila Global Group; Betplay 1876 - Corredor Empresarial; Betsson 1895; Codere 2218; Rushbet 1972; Bwin 2229; Stake 2226; Betano 2104; Yajuego 2240)."
+    - "La tabla consultada tenía 14 filas y no incluía Bingo Casino."
+
+- id: coljuegos-15-operadores
+  title: "¿Es usuario de apuestas en línea? Conozca los 15 operadores autorizados por Coljuegos"
+  url: https://www.coljuegos.gov.co/publicaciones/306824/es-usuario-de-apuestas-en-linea-conozca-los-15-operadores-autorizados-por-coljuegos/
+  type: official
+  reliability: alta
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Boletín (mayo de 2026) que cifra en 15 los operadores online autorizados: Wplay, Betsson, Codere, Luckia, BetPlay, Rushbet, YaJuego, Bingo Casino, Bwin, Betano, Rivalo, Mr. Yoker, Sportium, Zamba y Stake."
+
+- id: coljuegos-mryoker
+  title: "MrYoker, el nuevo operador en línea autorizado por Coljuegos"
+  url: https://www.coljuegos.gov.co/publicaciones/307328/mryoker-el-nuevo-operador-en-linea-autorizado-por-coljuegos/
+  type: official
+  reliability: alta
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Contrato de concesión C2261 de 2026; portal www.mryoker.co; operado por Global Vitxo S.A.S.; vigencia hasta 2031."
+
+- id: coljuegos-como-ser-operador
+  title: "Coljuegos - Cómo ser operador de juegos novedosos / Juegos operados por internet"
+  url: https://www.coljuegos.gov.co/publicaciones/juegos_operados_por_internet_pub
+  type: official
+  reliability: alta
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Los operadores online requieren contrato de concesión con Coljuegos; marco: Resolución 20161200025334 de 2016."
+    - "Coljuegos recomienda verificar que el dominio del operador termine en .co."
+
+- id: cms-coljuegos-publicidad
+  title: "CMS - Lineamientos de publicidad en las apuestas deportivas (Colombia)"
+  url: https://cms.law/es/col/publication/lineamientos-de-publicidad-en-las-apuestas-deportivas
+  type: law-firm
+  reliability: media
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "La Resolución 20231000019054 de 2023 regula publicidad, patrocinio y promoción de juegos online desde el 1 de enero de 2024, incluidos terceros."
+    - "La publicidad debe incluir la frase 'Autorizado por COLJUEGOS' y no puede sugerir que el juego es gratuito ni prometer ganancias."
+
+- id: consejo-estado-coljuegos-2026
+  title: "El Consejo de Estado frenó límites y sanciones que impuso Coljuegos a la publicidad del juego online (Yogonet, 25-06-2026)"
+  url: https://www.yogonet.com/latinoamerica/noticias/2026/06/25/109515-el-consejo-de-estado-freno-limites-y-sanciones-que-impuso-coljuegos-a-la-publicidad-del-juego-online
+  type: trade-press
+  reliability: media
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Suspensión provisional (junio de 2026) de varias disposiciones de la Resolución 20231000019054, entre ellas el tope de inversión publicitaria del 20 % de los ingresos brutos de juego."
+    - "Las fuentes discrepan sobre el número de disposiciones suspendidas y sobre el demandante."
+
+- id: igb-colombia-suspension
+  title: "Colombia court suspends key advertising rules for online operators (iGaming Business)"
+  url: https://igamingbusiness.com/legal-compliance/colombia-court-suspend-key-advertising-rules-online-operators/
+  type: trade-press
+  reliability: media
+  market: CO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Confirma la suspensión provisional y su carácter no definitivo (no es anulación)."
+
+- id: mincetur-faq-ley-31557
+  title: "MINCETUR - Preguntas frecuentes Ley N.º 31557"
+  url: https://apuestasdeportivas.mincetur.gob.pe/PDF/PREGUNTAS_FRECUENTES_v2.pdf
+  type: official
+  reliability: alta
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El MINCETUR es la autoridad que regula, autoriza, fiscaliza y sanciona los juegos y apuestas deportivas a distancia; la unidad competente es la DGJCMT."
+
+- id: mincetur-inicio-registro
+  title: "Mincetur inició el proceso de autorización y registro de solicitudes (gob.pe)"
+  url: https://www.gob.pe/institucion/mincetur/noticias/906358-mincetur-inicio-el-proceso-de-autorizacion-y-registro-de-solicitudes-vinculadas-a-la-actividad-de-juegos-y-apuestas-deportivas-a-distancia
+  type: official
+  reliability: alta
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Las solicitudes de autorización se presentaron en línea desde el 13 de febrero de 2024."
+
+- id: ds-005-2023-mincetur
+  title: "Decreto Supremo N.º 005-2023-MINCETUR (texto en Congreso)"
+  url: https://www.congreso.gob.pe/Docs/DGP/DIDP/files/ds_005-2023-mincetur.pdf
+  type: official
+  reliability: alta
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Reglamento de la Ley 31557; texto oficial a consultar para las disposiciones de publicidad."
+
+- id: garrigues-peru-reglamento
+  title: "Garrigues - Perú aprueba el reglamento de explotación de juegos y apuestas deportivas a distancia"
+  url: https://www.garrigues.com/es_ES/noticia/peru-aprueba-reglamento-explotacion-juegos-apuestas-deportivas-distancia
+  type: law-firm
+  reliability: media
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "La publicidad de juegos y apuestas debe incluir una advertencia sobre el riesgo de ludopatía."
+    - "Se mantienen restricciones a la promoción dirigida a menores y a entidades sin autorización del MINCETUR."
+    - "Las autorizaciones de plataforma tienen vigencia de seis años, renovables."
+    - "El reglamento entra en vigor el 10 de febrero de 2024."
+
+- id: elperuano-bloqueo-2026
+  title: "Mincetur bloquea 50 plataformas de juegos a distancia que operaban sin autorización (El Peruano, 2026)"
+  url: https://elperuano.pe/noticia/305981-mincetur-bloquea-50-plataformas-de-juegos-a-distancia-y-apuestas-deportivas-que-operaban-sin-autorizacion
+  type: official
+  reliability: alta
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Bloqueo de 50 plataformas no autorizadas en coordinación con el MTC (octubre de 2026)."
+
+- id: peru-retail-licencias
+  title: "Cómo identificar las plataformas de juego en línea con licencia (Perú Retail)"
+  url: https://www.peru-retail.com/como-identificar-las-plataformas-de-juego-en-linea-con-licencia-para-operar-en-el-pais-el-caso-de-stake-peru/
+  type: press
+  reliability: baja
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Las plataformas autorizadas deben exhibir su número de resolución de autorización (afirmación de prensa, verificar en el reglamento)."
+    - "Cifras de licencias vigentes contradictorias entre fuentes (más de 90 frente a 54 casinos a diciembre de 2025)."
+
+- id: rsi-rushbet-peru
+  title: "Rush Street Interactive expands Latin American footprint with launch of RushBet in Peru (MFN)"
+  url: https://mfn.se/one/a/rush-street-interactive/rush-street-interactive-expands-latin-american-footprint-with-launch-of-rushbet-in-peru-7f5df5ca
+  type: vendor
+  reliability: media
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "RushBet se lanzó en Perú en julio de 2024 bajo el nuevo régimen (comunicado del propio operador)."
+
+- id: yogonet-stake-peru
+  title: "Stake aterriza en el mercado de Perú tras obtener la licencia (Yogonet, 2024)"
+  url: https://www.yogonet.com/latinoamerica/noticias/2024/08/20/100453-stake-aterriza-en-el-mercado-de-peru-tras-obtener-la-licencia-para-operar-casino-y-apuestas-deportivas-online
+  type: trade-press
+  reliability: media
+  market: PE
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Stake obtuvo licencia para casino y apuestas en Perú en 2024."
+
+- id: mx-reforma-2026
+  title: "Así cambió la regulación de apuestas y casinos en México en 2026 (Vanguardia)"
+  url: https://www.vanguardia.com/deportes/2026/08/20/asi-cambio-la-regulacion-de-apuestas-y-casinos-en-mexico-en-2026/
+  type: press
+  reliability: media
+  market: MX
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El IEPS sobre juegos con apuestas subió del 30 % al 50 % desde el 1 de enero de 2026 (verificar en DOF)."
+    - "Restricciones horarias a anuncios en radio y TV (texto truncado; verificar)."
+
+- id: sigma-mx-reforma
+  title: "Reforma ley casinos México: riesgos de blanqueo (SIGMA)"
+  url: https://sigma.world/es/news/reforma-ley-casinos-mexico-riesgos-blanqueo/
+  type: trade-press
+  reliability: media
+  market: MX
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "SEGOB prepara una nueva Ley de Juegos y Sorteos para sustituir la de 1947; en septiembre de 2026 seguía en revisión interna."
+    - "Los sitios online operan vinculados a permisionarios con permiso de SEGOB."
+
+- id: spa-portaria-1231
+  title: "Portaria SPA/MF n.º 1.231/2024 (versión bilingüe, Montgomery)"
+  url: https://advennt.com/wp-content/uploads/2024/08/MONTGOMERY-Bilingual-dual-column-version-of-SPA-MF-Ordinance-No.-1231-of-31st-July-2024603317.1.pdf
+  type: law-firm
+  reliability: media
+  market: BR
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Art. 22: la actividad de los afiliados se considera parte del marketing del operador; contratos escritos en portugués; operadores y afiliados sujetos a sanciones de la Ley 14.790/2023."
+    - "Modificada por la Portaria SPA/MF 1.964/26 (contenido no verificado)."
+
+- id: agco-advertising
+  title: "AGCO - Important Information for Advertising and Marketing in Ontario's New iGaming Market"
+  url: https://www.agco.ca/en/news/important-information-advertising-and-marketing-ontarios-new-igaming-market
+  type: official
+  reliability: alta
+  market: CA-ON
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Los operadores responden por sus afiliados; prohibida la publicidad pública de incentivos (bonos), incluidos enlaces de afiliados."
+    - "Los afiliados del mercado de Ontario no pueden promocionar sitios no registrados por la AGCO."
+
+- id: harrishagan-affiliates-uk
+  title: "Harris Hagan - Keeping Affiliates in Line"
+  url: https://www.harrishagan.com/keeping-affiliates-in-line-no-fudging/
+  type: law-firm
+  reliability: media
+  market: UK
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "SR Code 1.1.2 (LCCP): los licenciatarios deben contratar a afiliados en términos que les obliguen a actuar como si estuvieran sujetos a las mismas condiciones; los afiliados deben cumplir CAP/BCAP."
+
+- id: ifrah-nj-affiliates
+  title: "Ifrah Law - New Jersey DGE releases guidance for affiliate marketers"
+  url: https://www.ifrahlaw.com/ifrah-on-igaming/new-jersey-dge-releases-guidance-for-affiliate-marketers/
+  type: law-firm
+  reliability: media
+  market: US-NJ
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Afiliados con pago fijo: registro de proveedor; afiliados con revshare/CPA ligado a actividad: licencia auxiliar (cifras de tasas históricas de 2013-2014)."
+
+- id: chile-proyecto-2026
+  title: "Chile: quién podría operar apuestas online (Radio Agricultura, 13-10-2026)"
+  url: https://www.radioagricultura.cl/noticias/chile-quien-podria-operar-apuestas-online-las-condiciones-que-se-empiezan-a-discutir_20261013/
+  type: press
+  reliability: media
+  market: CL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El proyecto de ley (Boletín 14.838-03) seguía en tramitación en octubre de 2026; la SCJ considera no autorizada la explotación de estas plataformas con el marco vigente."
+
+- id: canal26-argentina
+  title: "El mosaico roto: regular el juego online provincia a provincia (Canal26, 08-06-2026)"
+  url: https://www.canal26.com/general/2026/06/08/el-mosaico-roto-regular-el-juego-online-provincia-a-provincia-es-una-solucion-que-ya-nacio-vieja/
+  type: press
+  reliability: media
+  market: AR
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Unas 20 de 24 jurisdicciones argentinas tienen juego online regulado, con marcos distintos."
+
+- id: rd-ley-86-26
+  title: "Guía: lo que cambia para casinos, bancas y apuestas con la nueva Ley 86-26 (República Dominicana)"
+  url: https://inmobiliario.do/guia-lo-que-cambia-para-casinos-bancas-y-apuestas-con-la-nueva-ley-86-26/
+  type: press
+  reliability: baja
+  market: DO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "La Ley 86-26 (Gaceta Oficial 11263, 2 de octubre de 2026, según un despacho de abogados) crea la Dirección General de Juegos de Azar e incluye apuestas y juegos por internet. Texto oficial no consultado."
+
+- id: dgii-aviso-22-25
+  title: "DGII - Aviso 22-25: criterio de territorialidad del ISR"
+  url: https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2025/22-25.pdf
+  type: official
+  reliability: alta
+  market: DO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El ISR dominicano no se rige por renta mundial: grava rentas de fuente dominicana y las de fuente extranjera procedentes de inversiones y ganancias financieras."
+
+- id: dgii-consulta-40
+  title: "DGII - Consulta 40: renta de fuente dominicana de asalariado por una empresa extranjera"
+  url: https://dgii.gov.do/legislacion/consultas/Documents/Agosto/Consulta 40-Renta de fuente dominicana de asalariado por una empresa extranjera.pdf
+  type: official
+  reliability: alta
+  market: DO
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "La DGII calificó como renta de fuente dominicana la remuneración de un residente que prestaba servicios desde RD a una empresa de EE. UU.; otra consulta llegó a una conclusión distinta, por lo que depende del caso."
+
+- id: google-spam-policies
+  title: "Google Search Central - Spam policies for Google web search"
+  url: https://developers.google.com/search/docs/essentials/spam-policies
+  type: official
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Scaled content abuse: muchas páginas generadas con el propósito principal de manipular rankings, sea con automatización, esfuerzo humano o ambos."
+    - "Thin affiliation: páginas de afiliados sin contenido original ni valor añadido; participar en un programa de afiliados no es en sí una infracción."
+
+- id: google-gen-ai-guidance
+  title: "Google Search's guidance on using generative AI content on your website"
+  url: https://developers.google.com/search/docs/fundamentals/using-gen-ai-content
+  type: official
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "El uso de IA no es spam per se; lo es cuando el propósito principal es manipular el ranking."
+
+- id: google-march-2024
+  title: "What web creators should know about our March 2024 core update and new spam policies"
+  url: https://developers.google.com/search/blog/2024/03/core-update-spam-policies
+  type: official
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Introducción en marzo de 2024 de las políticas de scaled content abuse, site reputation abuse y expired domain abuse."
+
+- id: cf-pages-limits
+  title: "Cloudflare Pages - Limits (documentación oficial, réplica en preview)"
+  url: https://developers.cloudflare.com/pages/platform/limits/
+  type: vendor
+  reliability: media
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Plan gratuito: 500 builds/mes, 1 build concurrente, timeout de 20 minutos, solicitudes de activos estáticos no medidas; Pages Functions consumen la cuota de Workers (100.000 solicitudes/día en el plan gratuito)."
+
+- id: cf-web-analytics
+  title: "Cloudflare Web Analytics"
+  url: https://cloudflare.com/web-analytics
+  type: vendor
+  reliability: media
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Gratuito; el proveedor afirma no usar cookies ni localStorage ni fingerprinting."
+
+- id: cf-registrar-com-price
+  title: "Cloudflare .COM domain pricing tracker (domainoffer.net)"
+  url: https://domainoffer.net/tld/com/cloudflare
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Precio .com en Cloudflare Registrar de 10,11 a 10,46 USD/año según el rastreador y la fecha; sin sobreprecio en renovación. Confirmar en Cloudflare antes de comprar."
+
+- id: n8n-license-faq
+  title: "n8n - Sustainable Use License FAQ"
+  url: https://docs.n8n.io/n8n-community-license/community-license/license-faq
+  type: vendor
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "La edición community autoalojada puede usarse para operar el propio negocio; no puede ofrecerse n8n como servicio para que terceros creen flujos."
+
+- id: claude-code-skills-docs
+  title: "Claude Code Docs - Extend Claude with skills / Create custom subagents"
+  url: https://code.claude.com/docs/en/skills
+  type: vendor
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Skills de proyecto en .claude/skills/<nombre>/SKILL.md con frontmatter YAML (name, description, allowed-tools, etc.)."
+    - "Subagentes en .claude/agents/*.md con frontmatter (name y description obligatorios; tools, model opcionales)."
+
+- id: anthropic-pricing-skill
+  title: "Anthropic Claude API - tabla de modelos y precios (referencia de la skill claude-api, caché 2026-10-06)"
+  url: https://platform.claude.com/docs/en/about-claude/pricing
+  type: vendor
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: tool-reference
+  claims:
+    - "Claude Opus 5.5: 4 USD/MTok entrada, 20 USD/MTok salida; Claude Sonnet 5.5: 2/10; Claude Haiku 5.5: 0,10/0,50 (prompts hasta 100K tokens). Batch API: 50 % de descuento. Lecturas de caché ~0,1x."
+
+- id: statsdrone-codere
+  title: "StatsDrone - Codere Partners"
+  url: https://statsdrone.com/affiliate-programs/codere-partners/
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "RevShare, CPA e híbrido; tarifas 'a petición'; pago mensual; mínimo 200 EUR; sin arrastre de saldo negativo (según el agregador)."
+
+- id: statsdrone-betsson
+  title: "StatsDrone / AffPapa - Betsson Group Affiliates"
+  url: https://affpapa.com/affiliate-program/betsson-group-affiliates/
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "RevShare 25-50 %, mínimo de pago 50 EUR; política de arrastre negativo contradictoria entre fuentes."
+
+- id: statsdrone-rush
+  title: "StatsDrone - Rush Affiliates"
+  url: https://statsdrone.com/affiliate-programs/rush-affiliates
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Programa sobre Income Access con marcas RushBet Colombia y México; RevShare 25-35 %; datos posiblemente desactualizados."
+
+- id: statsdrone-betano-latam
+  title: "StatsDrone - Betano LatAm Affiliates"
+  url: https://statsdrone.com/affiliate-programs/betano-latam-affiliates/
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "RevShare 20 %, sin CPA, pago mensual (según el agregador; contradice otra ficha global con CPA)."
+
+- id: statsdrone-luckia
+  title: "StatsDrone - Red Luckia"
+  url: https://statsdrone.com/affiliate-programs/red-luckia
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Programa sobre NetRefer, RevShare 25-45 % (según el agregador)."
+
+- id: statsdrone-bet365
+  title: "StatsDrone - bet365 Partners"
+  url: https://statsdrone.com/affiliate-programs/bet365-partners
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "RevShare plano del 30 % citado por directorios; mercados aceptados contradictorios; mínimo de pago entre 100 y 250 EUR según la fuente."
+
+- id: affpaying-entain
+  title: "AffPaying - Entain Partners"
+  url: https://www.affpaying.com/entainpartners
+  type: aggregator
+  reliability: baja
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "Red de afiliados de las marcas de Entain (operada por GVC Services Ltd, Gibraltar); hasta 35 % RevShare según el directorio."
+
+- id: n8n-2-breaking-changes
+  title: "n8n - 2.0 breaking changes"
+  url: https://docs.n8n.io/2-0-breaking-changes
+  type: vendor
+  reliability: alta
+  market: GLOBAL
+  accessed: 2026-10-20
+  access: snippet
+  claims:
+    - "n8n 2.0 desactiva por defecto los nodos ExecuteCommand y LocalFileTrigger; se reactivan ajustando NODES_EXCLUDE."
+    - "Comprobado además en ejecución real (n8n 2.42.2): el acceso a $env desde expresiones está bloqueado por defecto."

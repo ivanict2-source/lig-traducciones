@@ -1,0 +1,18 @@
+---
+import type { Operator } from '../lib/data';
+
+// Los enlaces comerciales pasan por /go/<id>/ (Pages Function con control
+// geográfico) y llevan rel="sponsored nofollow". Sin acuerdo de afiliación se
+// enlaza al dominio oficial con rel="nofollow". Sin dominio confirmado, no hay enlace.
+interface Props { op: Operator }
+const { op } = Astro.props;
+---
+{op.affiliate.url ? (
+  <a class="cta" href={`/go/${op.id}/?src=${op.market.toLowerCase()}-${op.id}`} rel="sponsored nofollow noopener" target="_blank">
+    Visitar {op.name} <span class="meta">(enlace de afiliado)</span>
+  </a>
+) : op.official_url ? (
+  <a href={op.official_url} rel="nofollow noopener" target="_blank">Sitio oficial de {op.name}</a>
+) : (
+  <span class="meta">Dominio oficial pendiente de verificación</span>
+)}

@@ -1,0 +1,33 @@
+---
+import Base from '../../../layouts/Base.astro';
+import VerificationBadge from '../../../components/VerificationBadge.astro';
+import OperatorLink from '../../../components/OperatorLink.astro';
+import SourceList from '../../../components/SourceList.astro';
+import { site, publicMarkets, marketNames, operatorsFor, type Operator } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return publicMarkets.flatMap((m) =>
+    operatorsFor(m).map((op) => ({ params: { market: m.toLowerCase(), id: op.id }, props: { op } })),
+  );
+}
+const { op } = Astro.props as { op: Operator };
+const name = marketNames[op.market];
+---
+<Base title={`${op.name} en ${name}: licencia y verificación`} description={`Datos de licencia de ${op.name} en ${name} según el registro de ${op.regulator}: número de contrato o resolución, titular y fecha de la última comprobación.`} lang={site.locales[op.market]} market={op.market}>
+  <h1>{op.name} en {name}</h1>
+  <p><VerificationBadge v={op.verification} /></p>
+  <h2>Hechos verificados</h2>
+  <dl>
+    <dt>Regulador</dt><dd>{op.regulator}</dd>
+    <dt>Licencia / contrato</dt><dd>{op.license_ref ?? 'Pendiente de verificación'}</dd>
+    <dt>Titular</dt><dd>{op.legal_entity ?? 'Pendiente de verificación'}</dd>
+    <dt>Dominio oficial</dt><dd>{op.official_url ?? 'Pendiente de verificación'}</dd>
+  </dl>
+  <h2>Información del operador</h2>
+  <p class="meta">Aún no hemos recopilado información comercial del operador (métodos de pago, juegos, condiciones). Cuando la añadamos se indicará que procede del propio operador.</p>
+  <h2>Valoración editorial</h2>
+  <p class="meta">Sin valoración: solo publicamos opiniones basadas en una revisión documentada. Consulta la <a href="/metodologia/">metodología</a>.</p>
+  {op.notes && <p class="meta">Nota: {op.notes}</p>}
+  <p><OperatorLink op={op} /></p>
+  <SourceList ids={op.verification.source_ids} />
+</Base>

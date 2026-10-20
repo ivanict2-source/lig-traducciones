@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import { site, publicMarkets, isPreview, marketNames, type MarketCode } from '../lib/data';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+  market?: MarketCode | 'GLOBAL';
+  alternates?: { lang: string; href: string }[];
+  noindex?: boolean;
+  draftStatus?: string;
+}
+
+const {
+  title,
+  description,
+  lang = 'es',
+  market = 'GLOBAL',
+  alternates = [],
+  noindex = false,
+  draftStatus,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const fullTitle = title.includes(site.brand) ? title : `${title} | ${site.brand}`;
+const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+const robots = isPreview || noindex ? 'noindex, nofollow' : 'index, follow';
+const notice = market !== 'GLOBAL' ? site.market_notices[market] : null;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.href, Astro.site).href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.brand} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {beacon && !isPreview && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: beacon })}></script>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+    <header class="site-header">
+      {isPreview && (
+        <div class="preview-banner" role="status">
+          VISTA PREVIA INTERNA — incluye borradores no aprobados. No publicar. {draftStatus && <strong>Estado: {draftStatus}</strong>}
+        </div>
+      )}
+      <div class="wrap header-inner">
+        <a class="brand" href="/">{site.brand}</a>
+        <nav aria-label="Principal">
+          <ul>
+            {publicMarkets.map((m) => <li><a href={`/${m.toLowerCase()}/`}>{marketNames[m]}</a></li>)}
+            <li><a href="/metodologia/">Metodología</a></li>
+            <li><a href="/juego-responsable/">Juego responsable</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="age-strip" role="note">+{site.min_age} · Solo operadores autorizados · El juego conlleva riesgo de pérdida</div>
+    </header>
+    <main id="main" class="wrap">
+      {notice && <p class="market-notice" role="note">{notice}</p>}
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          <strong>Aviso de afiliación:</strong> algunos enlaces pueden ser de afiliado y generarnos una comisión si te registras,
+          sin coste para ti. Eso no cambia qué operadores mostramos: solo listamos operadores autorizados en el registro oficial.
+          <a href="/aviso-de-afiliacion/">Más información</a>.
+        </p>
+        <p>Prohibido para menores de {site.min_age} años. Si el juego deja de ser un entretenimiento, busca ayuda: <a href="/juego-responsable/">recursos de juego responsable</a>.</p>
+        <ul class="footer-links">
+          <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
+          <li><a href="/metodologia/">Metodología editorial</a></li>
+          <li><a href="/correcciones/">Correcciones</a></li>
+          <li><a href="/mercados/">Licencias y mercados</a></li>
+          <li><a href="/fuentes/">Fuentes</a></li>
+          <li><a href="/aviso-de-afiliacion/">Aviso de afiliación</a></li>
+          <li><a href="/privacidad/">Privacidad</a></li>
+          <li><a href="/cookies/">Cookies</a></li>
+          <li><a href="/condiciones-de-uso/">Condiciones de uso</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

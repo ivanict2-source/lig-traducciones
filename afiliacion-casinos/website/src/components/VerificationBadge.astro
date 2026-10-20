@@ -1,0 +1,16 @@
+---
+import type { Verification } from '../lib/data';
+import { fmtDate } from '../lib/data';
+
+interface Props { v: Verification }
+const { v } = Astro.props;
+const labels: Record<Verification['status'], string> = {
+  'verificado-humano': 'Verificado en el registro oficial',
+  'fuente-oficial-indirecta': 'Pendiente de comprobación manual',
+  prensa: 'Solo respaldo de prensa',
+};
+const cls = v.status === 'verificado-humano' ? 'ok' : 'warn';
+---
+<span class={`badge ${cls}`} title={`Última comprobación: ${fmtDate(v.checked)}`}>
+  {labels[v.status]} · {fmtDate(v.checked)}
+</span>

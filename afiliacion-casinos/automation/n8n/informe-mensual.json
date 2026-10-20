@@ -1,0 +1,128 @@
+{
+  "id": "c95cc6ea9c638e99",
+  "name": "Juego Verificado - informe-mensual",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## informe-mensual\nGenera el panel editorial y el informe de rendimiento/costes y los envía por correo.\n\nRequiere: n8n autoalojado en 127.0.0.1, variable PROJECT_DIR con la ruta del proyecto y el nodo Execute Command habilitado (n8n 2.x lo desactiva por defecto: NODES_EXCLUDE='[\"n8n-nodes-base.localFileTrigger\"]'). Asigna tu credencial SMTP al nodo de correo tras importar. Tras importar: cambia el destinatario de los nodos de correo (CONFIGURAR-DESTINATARIO@example.com). n8n 2.x bloquea $env en las expresiones: PROJECT_DIR se lee como variable de entorno del shell.",
+        "height": 220,
+        "width": 520
+      },
+      "id": "e919dde0-b2af-540b-90f7-eb7c355595b8",
+      "name": "Nota",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0c60b5b0-81f7-5ab2-8d64-865ce31a71b4",
+      "name": "Probar ahora",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtDayOfMonth": 1,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "49f47892-e389-50f2-bb43-60ee3262c211",
+      "name": "Día 1 de cada mes 08:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=cd \"$PROJECT_DIR\" && make report >/dev/null 2>&1; cat reports/estado-editorial.md reports/rendimiento.md"
+      },
+      "id": "ea5281ad-0178-504f-86e0-2b9679b5a126",
+      "name": "Informes",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "n8n@localhost",
+        "toEmail": "CONFIGURAR-DESTINATARIO@example.com",
+        "subject": "[Juego Verificado] Informe mensual",
+        "emailFormat": "text",
+        "text": "={{ $json.stdout }}",
+        "options": {}
+      },
+      "id": "b69c2017-3894-5915-a068-7f5d12822b48",
+      "name": "Enviar informe",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Día 1 de cada mes 08:00": {
+      "main": [
+        [
+          {
+            "node": "Informes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Informes": {
+      "main": [
+        [
+          {
+            "node": "Enviar informe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Probar ahora": {
+      "main": [
+        [
+          {
+            "node": "Informes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Santo_Domingo"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

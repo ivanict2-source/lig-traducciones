@@ -1,0 +1,27 @@
+# Estado del proyecto (seguimiento para continuar sin perder contexto)
+
+**Última actualización:** 2026-10-20 · **Rama:** `claude/casino-affiliate-ai-business-abdrjp`
+
+## Decisiones tomadas
+1. Un solo dominio en español, subcarpetas por país; MVP Colombia + Perú; estrategia «verificación primero» (docs/01).
+2. Arquitectura A: Astro estático + Markdown/Git + Cloudflare Pages + scripts locales + cron; n8n opcional (docs/04).
+3. Sin base de datos, sin CMS, sin servidor: panel = `reports/estado-editorial.md`.
+4. Aprobación humana obligatoria para publicar y para marcar operadores como verificados (`scripts/approve.py`).
+5. Afiliación solo vía `/go/` con control geográfico; CL y DO bloqueados.
+6. IA: Claude Code + skills para trabajo interactivo; API con topes (30 USD/mes, 1,50 USD/tarea) para automatizar.
+7. Dependencias fijadas a versiones con ≥ 14 días.
+
+## Hecho
+Investigación (46 fuentes), datos (17 operadores, 7 programas, 11 mercados), web, 14 contenidos en revisión, scripts, 9 skills, 8 agentes, 4 flujos n8n probados, cron, pruebas (`make test` verde), PDF de 34 páginas.
+
+## Bloqueos (requieren al propietario)
+- Verificación manual de operadores; aprobación de 14 contenidos; texto literal de la advertencia de Perú.
+- Asesoría legal/fiscal (RD Ley 86-26, DGII); confirmación de los programas de afiliación.
+- Dominio, cuenta de Cloudflare, Search Console, SMTP para n8n, `ANTHROPIC_API_KEY` (opcional).
+- Red del entorno de construcción: no se pudieron abrir páginas web (solo resultados de búsqueda) ni comprobar enlaces externos.
+
+## Próximos pasos sugeridos
+1. Propietario: leer `reports/informe-proyecto.pdf` y decidir (capítulo 30.2).
+2. Ejecutar `python scripts/check_site.py website/dist-preview --external` con Internet.
+3. Abrir cada fuente `access: snippet` y confirmar; luego `approve.py verify-operator`.
+4. Solicitar programas de afiliación con las preguntas de docs/03.

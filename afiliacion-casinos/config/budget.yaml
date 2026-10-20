@@ -1,0 +1,38 @@
+# Control de costes de IA y de la operación.
+# Precios por millón de tokens (USD), Anthropic API, referencia 2026-10 (ver data/sources.yaml: anthropic-pricing-skill).
+pricing_usd_per_mtok:
+  claude-haiku-5-5:  { input: 0.10, output: 0.50, cache_read_factor: 0.1 }
+  claude-sonnet-5-5: { input: 2.00, output: 10.00, cache_read_factor: 0.1 }
+  claude-opus-5-5:   { input: 4.00, output: 20.00, cache_read_factor: 0.1 }
+batch_discount: 0.5
+
+# Enrutado de modelos por tipo de tarea (petición del propietario: modelos
+# económicos para tareas sencillas, escalar solo cuando haga falta).
+routing:
+  metadata:      claude-haiku-5-5   # títulos, descripciones, slugs, clasificación
+  brief:         claude-sonnet-5-5
+  draft:         claude-sonnet-5-5
+  translation:   claude-sonnet-5-5
+  fact_check:    claude-opus-5-5    # tareas sensibles: verificación y cumplimiento
+  compliance:    claude-opus-5-5
+escalation:
+  # Si una tarea "draft" falla la validación 2 veces, se reintenta con el modelo superior.
+  draft: claude-opus-5-5
+
+limits:
+  monthly_usd: 30.00        # tope duro mensual de API; el pipeline se detiene al alcanzarlo
+  per_task_usd: 1.50        # tope por tarea individual
+  max_iterations: 3         # reintentos máximos por tarea
+  max_output_tokens: 16000
+cache:
+  enabled: true
+  dir: .cache/llm           # caché local por hash de petición (evita regenerar)
+ledger: reports/costes/ledger.csv
+
+# Costes fijos previstos (USD). "confirmado" = precio público consultado; "estimado" = supuesto.
+fixed_costs:
+  - { item: "Dominio .com (Cloudflare Registrar)", usd_year: 10.46, status: estimado, source: cf-registrar-com-price }
+  - { item: "Cloudflare Pages (plan gratuito)", usd_year: 0, status: estimado, source: cf-pages-limits }
+  - { item: "Cloudflare Web Analytics", usd_year: 0, status: estimado, source: cf-web-analytics }
+  - { item: "Google Search Console", usd_year: 0, status: estimado, source: null }
+  - { item: "n8n community autoalojado (opcional)", usd_year: 0, status: estimado, source: n8n-license-faq }

@@ -1,0 +1,18 @@
+# Configuración editorial y de marca. La marca y el dominio son provisionales:
+# no se ha comprobado la disponibilidad del dominio ni de la marca.
+brand: "Juego Verificado"
+tagline: "Qué casinos online están autorizados, comprobado en el registro oficial."
+site_url_env: SITE_URL            # la URL real se toma de la variable de entorno
+default_site_url: https://juegoverificado.example
+contact_email: contacto@juegoverificado.example   # placeholder: crear buzón real antes de publicar
+min_age: 18
+active_markets: [CO, PE]           # mercados del MVP
+blocked_affiliate_countries: [CL, DO]  # nunca se redirige tráfico de afiliación desde estos países
+locales:
+  CO: es-CO
+  PE: es-PE
+# Leyendas obligatorias por mercado (se insertan en cada página del mercado).
+# El texto exacto de Perú debe copiarse del DS 005-2023-MINCETUR antes de publicar.
+market_notices:
+  CO: "Solo operadores con contrato de concesión vigente de Coljuegos. Autorizado por COLJUEGOS: verifica cada operador en coljuegos.gov.co. Juego exclusivo para mayores de 18 años."
+  PE: "Solo plataformas autorizadas por el MINCETUR. El juego en exceso puede causar ludopatía. Juego exclusivo para mayores de 18 años. [PENDIENTE: sustituir por el texto literal de advertencia exigido por el DS 005-2023-MINCETUR]"

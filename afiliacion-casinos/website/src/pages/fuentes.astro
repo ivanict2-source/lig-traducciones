@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { sources, fmtDate } from '../lib/data';
+---
+<Base title="Fuentes y referencias" description="Registro público de las fuentes que usamos: reguladores, normas, documentación de programas y prensa especializada, con fecha de consulta.">
+  <h1>Fuentes y referencias</h1>
+  <p>Priorizamos reguladores y normas oficiales. Las fuentes secundarias se marcan como tales.</p>
+  <ol>
+    {sources.map((s) => (
+      <li id={s.id}>
+        <a href={s.url} rel="noopener" target="_blank">{s.title}</a>
+        <span class="meta"> — {s.type}, fiabilidad {s.reliability}, consultada {fmtDate(s.accessed)}</span>
+      </li>
+    ))}
+  </ol>
+</Base>

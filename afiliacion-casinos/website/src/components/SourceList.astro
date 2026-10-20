@@ -1,0 +1,20 @@
+---
+import { sourceById, fmtDate } from '../lib/data';
+
+interface Props { ids: string[]; heading?: string }
+const { ids, heading = 'Fuentes' } = Astro.props;
+const items = ids.map((id) => sourceById.get(id)).filter((s) => !!s);
+---
+{items.length > 0 && (
+  <section class="sources" aria-labelledby="fuentes-h">
+    <h2 id="fuentes-h">{heading}</h2>
+    <ol>
+      {items.map((s) => (
+        <li>
+          <a href={s!.url} rel="noopener" target="_blank">{s!.title}</a>
+          <span class="meta"> — {s!.type === 'official' ? 'fuente oficial' : 'fuente secundaria'}, consultada el {fmtDate(s!.accessed)}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

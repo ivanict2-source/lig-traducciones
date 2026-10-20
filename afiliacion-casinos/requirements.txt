@@ -1,0 +1,6 @@
+# Dependencias Python (versiones fijadas; política: solo versiones publicadas hace >= 14 días).
+PyYAML==6.0.3
+reportlab==5.0.1
+pytest==9.1.1
+# Opcional: solo para el pipeline de generación por API (scripts/pipeline.py).
+anthropic==1.11.0

@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { markets, sourceById } from '../lib/data';
+const priorityLabel = (p: number | string) => (p === 'X' ? 'Excluido' : `Prioridad ${p}`);
+---
+<Base title="Licencias y mercados: dónde trabajamos y por qué" description="En qué países publicamos información sobre casinos online, qué regulador autoriza a los operadores y en qué mercados no dirigimos tráfico comercial.">
+  <h1>Licencias y mercados</h1>
+  <p>
+    Solo publicamos contenido comercial para mercados con un régimen de licencias online vigente y un registro
+    público verificable. Que un casino acepte jugadores de un país no significa que su promoción allí sea legal.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">País</th><th scope="col">Situación regulatoria</th><th scope="col">Estado en este sitio</th><th scope="col">Fuentes</th></tr></thead>
+      <tbody>
+        {markets.map((m) => (
+          <tr>
+            <th scope="row">{m.country}</th>
+            <td>{m.regulatory_status}</td>
+            <td>{priorityLabel(m.priority)}</td>
+            <td>{m.official_sources.map((id) => sourceById.get(id)).filter(Boolean).map((s) => <a href={s!.url} rel="noopener" target="_blank">[{s!.id}]</a>)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Base>

@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import OperatorTable from '../../../components/OperatorTable.astro';
+import { site, publicMarkets, marketNames, operatorsFor, type MarketCode } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return publicMarkets.map((m) => ({ params: { market: m.toLowerCase() }, props: { code: m } }));
+}
+const { code } = Astro.props as { code: MarketCode };
+const name = marketNames[code];
+---
+<Base title={`Operadores de casino online autorizados en ${name}`} description={`Lista de operadores de juego online autorizados en ${name} según el registro oficial, con número de licencia o contrato y fecha de verificación.`} lang={site.locales[code]} market={code}>
+  <h1>Operadores autorizados en {name}</h1>
+  <p>
+    Esta comparativa recoge solo datos verificables de licencia. No ordenamos por comisiones de afiliación ni
+    mostramos bonos. Lee cómo trabajamos en nuestra <a href="/metodologia/">metodología</a>.
+  </p>
+  <OperatorTable ops={operatorsFor(code)} market={code} />
+</Base>

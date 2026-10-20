@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import OperatorTable from '../../components/OperatorTable.astro';
+import SourceList from '../../components/SourceList.astro';
+import { site, publicMarkets, markets, marketNames, operatorsFor, type MarketCode } from '../../lib/data';
+import { publishedEntries } from '../../lib/content';
+
+export function getStaticPaths() {
+  return publicMarkets.map((m) => ({ params: { market: m.toLowerCase() }, props: { code: m } }));
+}
+const { code } = Astro.props as { code: MarketCode };
+const info = markets.find((m) => m.code === code)!;
+const guides = (await publishedEntries()).filter((e) => e.data.market === code && e.data.type !== 'legal');
+const name = marketNames[code];
+---
+<Base title={`Casinos online legales en ${name}`} description={`Qué casinos online están autorizados en ${name}, cómo comprobar una licencia y qué dice la normativa. Información verificada con fuentes oficiales.`} lang={site.locales[code]} market={code}>
+  <h1>Casinos online legales en {name}</h1>
+  <p>{info.regulatory_status}</p>
+  {info.regulator_registry && <p>Registro oficial: <a href={info.regulator_registry} rel="noopener" target="_blank">{new URL(info.regulator_registry).hostname}</a></p>}
+  <h2>Operadores autorizados</h2>
+  <OperatorTable ops={operatorsFor(code)} market={code} />
+  {guides.length > 0 && (
+    <section>
+      <h2>Guías para {name}</h2>
+      <ul>{guides.map((g) => <li><a href={g.data.permalink}>{g.data.title}</a></li>)}</ul>
+    </section>
+  )}
+  <SourceList ids={info.official_sources} />
+</Base>

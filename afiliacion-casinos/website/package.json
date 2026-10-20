@@ -1,0 +1,27 @@
+{
+  "name": "juego-verificado-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:preview": "node scripts/gen-go-links.mjs && PUBLIC_BUILD_MODE=preview astro build --outDir dist-preview",
+    "preview": "astro preview",
+    "prebuild": "node scripts/gen-go-links.mjs",
+    "test": "node --test tests/go.test.mjs",
+    "test:a11y": "node tests/a11y.mjs dist-preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.5",
+    "js-yaml": "4.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0",
+    "playwright-core": "^1.56.1"
+  }
+}

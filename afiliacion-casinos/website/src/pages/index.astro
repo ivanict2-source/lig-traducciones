@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, publicMarkets, marketNames, operatorsFor, isPreview } from '../lib/data';
+import { publishedEntries } from '../lib/content';
+
+const guides = (await publishedEntries())
+  .filter((e) => e.data.type !== 'legal' && e.data.type !== 'editorial')
+  .sort((a, b) => +b.data.updated - +a.data.updated)
+  .slice(0, 6);
+---
+<Base title={`${site.brand}: casinos online autorizados en Colombia y Perú`} description="Comprobamos en el registro oficial de cada regulador qué casinos y casas de apuestas online están autorizados en Colombia y Perú, con fuentes y fecha de verificación.">
+  <h1>{site.tagline}</h1>
+  <p>
+    Antes de registrarte en un casino online, comprueba que está autorizado en tu país. Aquí reunimos la información
+    de los registros oficiales de <strong>Coljuegos</strong> (Colombia) y del <strong>MINCETUR</strong> (Perú), con enlace
+    a la fuente y fecha de la última comprobación. No publicamos bonos ni promesas de ganancias.
+  </p>
+  <ul class="cards">
+    {publicMarkets.map((m) => (
+      <li class="card">
+        <h2><a href={`/${m.toLowerCase()}/`}>{marketNames[m]}</a></h2>
+        <p>
+          {operatorsFor(m).filter((o) => o.verification.status === 'verificado-humano').length} operadores verificados manualmente en el registro oficial.
+          {isPreview && <span class="meta"> (Vista previa: {operatorsFor(m).length} en la base de datos, pendientes de comprobación.)</span>}
+        </p>
+        <a href={`/${m.toLowerCase()}/operadores/`}>Ver operadores autorizados</a>
+      </li>
+    ))}
+  </ul>
+  {guides.length > 0 && (
+    <section>
+      <h2>Guías recientes</h2>
+      <ul>
+        {guides.map((g) => <li><a href={g.data.permalink}>{g.data.title}</a> <span class="meta">— actualizado {g.data.updated.toISOString().slice(0, 10)}</span></li>)}
+      </ul>
+    </section>
+  )}
+</Base>

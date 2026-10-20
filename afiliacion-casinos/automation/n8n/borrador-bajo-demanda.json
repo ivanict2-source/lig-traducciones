@@ -1,0 +1,187 @@
+{
+  "id": "5afb1bccc032ee62",
+  "name": "Juego Verificado - borrador-bajo-demanda",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## borrador-bajo-demanda\nLanza el pipeline de brief (por defecto en dry-run). El contenido generado queda en estado research/draft: nunca se publica solo.\n\nRequiere: n8n autoalojado en 127.0.0.1, variable PROJECT_DIR con la ruta del proyecto y el nodo Execute Command habilitado (n8n 2.x lo desactiva por defecto: NODES_EXCLUDE='[\"n8n-nodes-base.localFileTrigger\"]'). Asigna tu credencial SMTP al nodo de correo tras importar. Tras importar: cambia el destinatario de los nodos de correo (CONFIGURAR-DESTINATARIO@example.com). n8n 2.x bloquea $env en las expresiones: PROJECT_DIR se lee como variable de entorno del shell.",
+        "height": 220,
+        "width": 520
+      },
+      "id": "3f174c2d-0ef9-5632-9740-5281b8799082",
+      "name": "Nota",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ab171efe-0cc6-5fc7-a679-d7515f2569c1",
+      "name": "Ejecución manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "t",
+              "name": "topic",
+              "value": "Cómo comprobar el número de contrato de un operador en Coljuegos",
+              "type": "string"
+            },
+            {
+              "id": "m",
+              "name": "market",
+              "value": "CO",
+              "type": "string"
+            },
+            {
+              "id": "d",
+              "name": "dry_run",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6213bb7e-b01c-53fb-80fe-dbd9c95034f9",
+      "name": "Tema",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=cd \"$PROJECT_DIR\" && .venv/bin/python scripts/pipeline.py {{ $json.dry_run ? '--dry-run' : '' }} brief --topic \"{{ $json.topic }}\" --market {{ $json.market }} 2>&1"
+      },
+      "id": "e8c14fa5-57b8-56db-be35-79b63738d7df",
+      "name": "Brief y borrador",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e1e9d4cb-827f-5755-a221-242d551ccfa2",
+      "name": "¿Falló?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "n8n@localhost",
+        "toEmail": "CONFIGURAR-DESTINATARIO@example.com",
+        "subject": "[Juego Verificado] Pipeline de borradores con error",
+        "emailFormat": "text",
+        "text": "={{ $('Brief y borrador').item.json.stdout }}",
+        "options": {}
+      },
+      "id": "21d3e7bf-bff4-5938-bd47-767359d58d9d",
+      "name": "Aviso",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Ejecución manual": {
+      "main": [
+        [
+          {
+            "node": "Tema",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tema": {
+      "main": [
+        [
+          {
+            "node": "Brief y borrador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brief y borrador": {
+      "main": [
+        [
+          {
+            "node": "¿Falló?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Falló?": {
+      "main": [
+        [
+          {
+            "node": "Aviso",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Santo_Domingo"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

@@ -1,0 +1,34 @@
+---
+import type { Operator } from '../lib/data';
+import VerificationBadge from './VerificationBadge.astro';
+import OperatorLink from './OperatorLink.astro';
+
+interface Props { ops: Operator[]; market: string }
+const { ops, market } = Astro.props;
+---
+{ops.length === 0 ? (
+  <p>
+    Todavía no hay operadores comprobados manualmente en el registro oficial para este mercado.
+    Publicaremos la lista cuando cada licencia esté verificada.
+  </p>
+) : (
+  <div class="table-wrap">
+    <table>
+      <caption class="meta">Datos de licencia tomados del registro del regulador. No incluye bonos ni promociones.</caption>
+      <thead>
+        <tr><th scope="col">Operador</th><th scope="col">Licencia / contrato</th><th scope="col">Titular</th><th scope="col">Verificación</th><th scope="col">Enlace</th></tr>
+      </thead>
+      <tbody>
+        {ops.map((op) => (
+          <tr>
+            <th scope="row"><a href={`/${market.toLowerCase()}/operadores/${op.id}/`}>{op.name}</a></th>
+            <td>{op.license_ref ?? 'Pendiente'}</td>
+            <td>{op.legal_entity ?? 'Pendiente'}</td>
+            <td><VerificationBadge v={op.verification} /></td>
+            <td><OperatorLink op={op} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
