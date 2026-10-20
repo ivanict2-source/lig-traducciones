@@ -5,7 +5,7 @@
 | 1 | El build de producción tiene 73 enlaces internos rotos hacia las 9 páginas legales/editoriales aún no aprobadas | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Aprobar las páginas legales; `check_site.py --production` debe quedar en 0 |
 | 2 | Perú no se publica en producción: falta el texto literal de la advertencia sobre ludopatía | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Copiar el texto del DS 005-2023-MINCETUR en `config/site.yaml` |
 | 3 | Ningún operador está `verificado-humano`: las tablas de producción salen vacías | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Verificación manual en Coljuegos/MINCETUR |
-| 4 | Enlaces externos sin comprobar (47 únicos) | Limitación del entorno | BLOQUEADA (red) | `python scripts/check_site.py website/dist-preview --external` en un equipo con Internet |
+| 4 | Enlaces externos sin comprobar (48 únicos) | Limitación del entorno | BLOQUEADA (red) | `python scripts/check_site.py website/dist-preview --external` en un equipo con Internet |
 | 5 | Pipeline por API sin llamadas reales | Falta de credenciales | BLOQUEADA | Definir `ANTHROPIC_API_KEY` y ejecutar un brief real con tope bajo |
 | 6 | Correo de alertas n8n | Falta de credenciales SMTP | BLOQUEADA | Configurar credencial SMTP en n8n |
 | 7 | `senales-casino-no-autorizado.md` tiene 295 palabras (mínimo orientativo 300) | Advertencia editorial | Pendiente | Ampliar durante la revisión |

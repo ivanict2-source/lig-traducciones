@@ -769,7 +769,7 @@ Estados: **APROBADA**, **FALLIDA**, **NO EJECUTADA**, **BLOQUEADA**, **PENDIENTE
 | 4 | Reglas editoriales y de cumplimiento | `validate_content.py` | 0 errores, 3 advertencias (despliegue bloqueado por páginas legales sin aprobar; Perú no publicable; una guía con 295 palabras) | APROBADA |
 | 5 | Enlaces internos, SEO, metadatos, hreflang (preview) | `check_site.py` | 39 páginas, 0 errores, 0 advertencias | APROBADA |
 | 6 | Enlaces internos de producción | `check_site.py --production` | 73 enlaces a 9 páginas legales sin aprobar | PENDIENTE DE REVISIÓN HUMANA (bloqueo deliberado) |
-| 7 | Enlaces externos (47) | `check_site.py --external` | Red del entorno bloqueada | BLOQUEADA |
+| 7 | Enlaces externos (48) | `check_site.py --external` | Red del entorno bloqueada | BLOQUEADA |
 | 8 | Producción sin borradores, sin PENDIENTE y sin banner | pytest | Detectó un fallo real (aviso de Perú con PENDIENTE en producción); corregido | APROBADA |
 | 9 | Solo operadores verificados por humanos en producción | pytest | 0 fichas en producción; 17 en preview | APROBADA |
 | 10 | robots.txt y sitemap por entorno | pytest | Preview `Disallow: /`; producción bloquea `/go/` y publica el sitemap | APROBADA |
@@ -789,8 +789,8 @@ Estados: **APROBADA**, **FALLIDA**, **NO EJECUTADA**, **BLOQUEADA**, **PENDIENTE
 | 24 | Importación de flujos n8n | n8n 2.42.2 CLI | 4/4 tras corregir 1 defecto | APROBADA |
 | 25 | Ejecución de flujos n8n | `n8n execute` | Comandos con exitCode 0 en los 4; nodos de correo sin SMTP | APROBADA (comandos) / BLOQUEADA (correo) |
 | 26 | Panel editorial y caducidad | `editorial_status.py` | Informe generado | APROBADA |
-| 27 | Generación y apertura del PDF | ReportLab + `pdfinfo`/`pdftotext` | Ver capítulo 31 y la salida de `make pdf` | APROBADA |
-| 28 | Instalación limpia desde un clon nuevo | `make setup && make test` | Ver nota inferior | APROBADA |
+| 27 | Generación y apertura del PDF | ReportLab + `pdfinfo`/`pdftotext` | 34 páginas, estructura PDF válida, texto extraíble con pdftotext, revisión visual | APROBADA |
+| 28 | Instalación limpia desde un clon nuevo | `make setup && make test` | `make setup && make test` sin errores (log en reports/pruebas/instalacion-limpia.log) | APROBADA |
 | 29 | Comprobación de tipos de Astro | `astro check` | Requiere instalar dependencias adicionales | NO EJECUTADA |
 | 30 | Rendimiento | Tamaño de las páginas | HTML estático sin JavaScript propio; CSS único de unos 3 KB | APROBADA (medición básica) |
 | 31 | Seguridad de dependencias | `npm audit` / `pip-audit` | No ejecutado (requiere red al servicio de avisos) | NO EJECUTADA |
@@ -809,7 +809,7 @@ Estados: **APROBADA**, **FALLIDA**, **NO EJECUTADA**, **BLOQUEADA**, **PENDIENTE
 | 1 | El build de producción tiene 73 enlaces internos rotos hacia las 9 páginas legales/editoriales aún no aprobadas | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Aprobar las páginas legales; `check_site.py --production` debe quedar en 0 |
 | 2 | Perú no se publica en producción: falta el texto literal de la advertencia sobre ludopatía | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Copiar el texto del DS 005-2023-MINCETUR en `config/site.yaml` |
 | 3 | Ningún operador está `verificado-humano`: las tablas de producción salen vacías | Bloqueo deliberado | PENDIENTE DE REVISIÓN HUMANA | Verificación manual en Coljuegos/MINCETUR |
-| 4 | Enlaces externos sin comprobar (47 únicos) | Limitación del entorno | BLOQUEADA (red) | `python scripts/check_site.py website/dist-preview --external` en un equipo con Internet |
+| 4 | Enlaces externos sin comprobar (48 únicos) | Limitación del entorno | BLOQUEADA (red) | `python scripts/check_site.py website/dist-preview --external` en un equipo con Internet |
 | 5 | Pipeline por API sin llamadas reales | Falta de credenciales | BLOQUEADA | Definir `ANTHROPIC_API_KEY` y ejecutar un brief real con tope bajo |
 | 6 | Correo de alertas n8n | Falta de credenciales SMTP | BLOQUEADA | Configurar credencial SMTP en n8n |
 | 7 | `senales-casino-no-autorizado.md` tiene 295 palabras (mínimo orientativo 300) | Advertencia editorial | Pendiente | Ampliar durante la revisión |
