@@ -21,6 +21,8 @@ Investigación (46 fuentes), datos (17 operadores, 7 programas, 11 mercados), we
 - Red del entorno de construcción: no se pudieron abrir páginas web (solo resultados de búsqueda) ni comprobar enlaces externos.
 
 ## Sesión siguiente (pedido del propietario)
+- Responder en detalle: ¿es buena idea de negocio y vale la pena? (veredicto preliminar dado: experimento de bajo coste con criterios de abandono; ver conversación).
+- Vista previa privada publicada: https://claude.ai/artifact/Cj4DKDweX7dppA5rsDJhuC
 - Revisar `docs/anexo-estructura-georgia-estonia.md` (cuenta en Georgia + OÜ en Estonia). Conclusión preliminar: no constituir aún; validar con asesor en RD.
 - Repetir `git push` cuando GitHub tenga acceso (2-3 commits locales pendientes).
 
